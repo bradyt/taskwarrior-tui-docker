@@ -13,11 +13,11 @@ RUN make
 RUN make install
 WORKDIR ..
 
-RUN curl -LOJ https://github.com/kdheepak/taskwarrior-tui/releases/download/v0.14.7/taskwarrior-tui-x86_64-unknown-linux-gnu.tar.gz
+RUN curl -LOJ https://github.com/kdheepak/taskwarrior-tui/releases/download/v0.14.8/taskwarrior-tui-x86_64-unknown-linux-gnu.tar.gz
 RUN tar xf taskwarrior-tui-x86_64-unknown-linux-gnu.tar.gz
 
 # RUN git clone \
-#     -b v0.14.7 \
+#     -b v0.14.8 \
 #     https://github.com/kdheepak/taskwarrior-tui.git
 # WORKDIR taskwarrior-tui
 # RUN cargo fetch
