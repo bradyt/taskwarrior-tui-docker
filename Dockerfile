@@ -14,6 +14,14 @@ RUN make
 RUN make install
 WORKDIR ..
 
+RUN curl -O https://taskwarrior.org/download/taskd-1.1.0.tar.gz
+RUN tar xzvf taskd-1.1.0.tar.gz
+WORKDIR taskd-1.1.0
+RUN cmake -DCMAKE_BUILD_TYPE=release .
+RUN make
+RUN make install
+WORKDIR ..
+
 RUN curl -LO https://github.com/kdheepak/taskwarrior-tui/releases/download/v0.14.8/taskwarrior-tui-x86_64-unknown-linux-gnu.tar.gz
 RUN tar xf taskwarrior-tui-x86_64-unknown-linux-gnu.tar.gz
 
