@@ -39,4 +39,19 @@ ADD /root /root
 
 ENV TASKDDATA /root/opt/var/taskd
 
+RUN mkdir /tmp/second_account
+WORKDIR /tmp/second_account
+RUN cp /root/.taskrc .
+RUN HOME=. task config data.location /tmp/second_account/.task
+
+RUN task add foo
+RUN task add bar
+RUN taskdctl start && sleep 2 && task sync
+RUN taskdctl start && sleep 2 && HOME=. task sync
+RUN HOME=. task 1 delete
+RUN taskdctl start && sleep 2 && HOME=. task sync
+
 WORKDIR /root
+
+RUN task config uda.taskwarrior-tui.background_process task sync
+RUN task config uda.taskwarrior-tui.background_process_period 5
