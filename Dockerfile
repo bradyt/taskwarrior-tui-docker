@@ -4,7 +4,8 @@ RUN apt-get update && apt-get install -y \
     curl \
     cmake \
     libgnutls28-dev \
-    vim
+    vim \
+    gnutls-bin
 
 RUN curl -O https://taskwarrior.org/download/task-2.6.1.tar.gz
 RUN tar xzvf task-2.6.1.tar.gz
