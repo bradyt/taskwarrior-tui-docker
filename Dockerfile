@@ -11,6 +11,7 @@ WORKDIR task-2.6.1
 RUN cmake -DCMAKE_BUILD_TYPE=release .
 RUN make
 RUN make install
+WORKDIR ..
 
 RUN curl -LOJ https://github.com/kdheepak/taskwarrior-tui/releases/download/v0.14.7/taskwarrior-tui-x86_64-unknown-linux-gnu.tar.gz
 RUN tar xf taskwarrior-tui-x86_64-unknown-linux-gnu.tar.gz
