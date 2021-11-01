@@ -5,14 +5,14 @@ RUN apt-get update && apt-get install -y \
     cmake \
     libgnutls28-dev
 
-RUN curl -OJ https://taskwarrior.org/download/task-2.5.3.tar.gz
-RUN tar xzvf task-2.5.3.tar.gz
-WORKDIR task-2.5.3
+RUN curl -OJ https://taskwarrior.org/download/task-2.6.1.tar.gz
+RUN tar xzvf task-2.6.1.tar.gz
+WORKDIR task-2.6.1
 RUN cmake -DCMAKE_BUILD_TYPE=release .
 RUN make
 RUN make install
 
-RUN curl -LOJ https://github.com/kdheepak/taskwarrior-tui/releases/download/v0.13.34/taskwarrior-tui-x86_64-unknown-linux-gnu.tar.gz
+RUN curl -LOJ https://github.com/kdheepak/taskwarrior-tui/releases/download/v0.14.7/taskwarrior-tui-x86_64-unknown-linux-gnu.tar.gz
 RUN tar xf taskwarrior-tui-x86_64-unknown-linux-gnu.tar.gz
 
 # RUN git clone \
