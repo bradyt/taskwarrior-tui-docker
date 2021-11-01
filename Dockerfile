@@ -3,7 +3,8 @@ FROM rust:1.56.1-bullseye
 RUN apt-get update && apt-get install -y \
     curl \
     cmake \
-    libgnutls28-dev
+    libgnutls28-dev \
+    vim
 
 RUN curl -OJ https://taskwarrior.org/download/task-2.6.1.tar.gz
 RUN tar xzvf task-2.6.1.tar.gz
