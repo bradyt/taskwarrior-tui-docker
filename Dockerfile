@@ -23,6 +23,7 @@ RUN make
 RUN make install
 WORKDIR ..
 
+WORKDIR /usr/local/bin
 RUN curl -LO https://github.com/kdheepak/taskwarrior-tui/releases/download/v0.14.8/taskwarrior-tui-x86_64-unknown-linux-gnu.tar.gz
 RUN tar xf taskwarrior-tui-x86_64-unknown-linux-gnu.tar.gz
 
